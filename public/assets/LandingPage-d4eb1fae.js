@@ -1,0 +1,1 @@
+import{d as s,o as c,c as r,a as _}from"./index.js";const d=(e,t)=>{const n=e.__vccOpts||e;for(const[o,a]of t)n[o]=a;return n},i=s({name:"LandingPage",setup(){return{}}}),p=_("h1",null,"Landing Page",-1),l=[p];function u(e,t,n,o,a,f){return c(),r("section",null,l)}const m=d(i,[["render",u]]);export{m as default};
