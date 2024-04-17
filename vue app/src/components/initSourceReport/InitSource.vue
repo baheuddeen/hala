@@ -39,17 +39,17 @@ export default defineComponent({
 
 
 <template>
-    <div style="direction: ltr;">        
+    <div style="direction: ltr; margin: 25px;">        
         <DataTable :value="requests" ref="dt" sortField="price" :sortOrder="-1" tableStyle="min-width: 50rem">
             <template #header>
                 <div style="text-align: left">
                     <button @click="exportCSV($event)" style="padding: 10px; margin: 10px;"> Export CSV</button>
                 </div>
             </template>
-            <Column field="id" header="Id" sortable style="width: 5%"></Column>
-            <Column field="ip" header="IP" sortable style="width: 15%"></Column>
-            <Column field="init_source" header="Source" sortable style="width: 15%"></Column>
-            <Column field="created_at" header="Time" sortable style="width: 15%"></Column>
+            <Column field="id" header="Id"  style="width: 5%"></Column>
+            <Column field="ip" header="IP"  style="width: 15%"></Column>
+            <Column field="init_source" header="Source"  style="width: 15%"></Column>
+            <Column field="created_at" header="Time"  style="width: 15%"></Column>
         </DataTable>
     </div> 
 </template>
