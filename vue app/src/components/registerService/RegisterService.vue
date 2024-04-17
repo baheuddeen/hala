@@ -45,17 +45,85 @@ export default defineComponent({
                 name: 'تويوتا',
                 models: [
                     {
-                        id: 101,
-                        name: 'كامري'
+                        "id": 1,
+                        "name": "LiteAce VAN 2024"
                     },
                     {
-                        id: 102,
-                        name: 'كورولا'
+                        "id": 2,
+                        "name": "Land Cruiser 2024"
                     },
                     {
-                        id: 103,
-                        name: 'هايلكس'
+                        "id": 3,
+                        "name": "Land Cruiser 70 Hardtop 2024"
                     },
+                    {
+                        "id": 4,
+                        "name": "RAV4 2024"
+                    },
+                    {
+                        "id": 5,
+                        "name": "Land Cruiser 70 Pickup 2024"
+                    },
+                    {
+                        "id": 6,
+                        "name": "Yaris 2024"
+                    },
+                    {
+                        "id": 7,
+                        "name": "Veloz 2024"
+                    },
+                    {
+                        "id": 8,
+                        "name": "Hilux Double Cab 2024"
+                    },
+                    {
+                        "id": 9,
+                        "name": "Fortuner 2024"
+                    },
+                    {
+                        "id": 10,
+                        "name": "Camry 2024"
+                    },
+                    {
+                        "id": 11,
+                        "name": "Corolla 2024"
+                    },
+                    {
+                        "id": 12,
+                        "name": "Innova 2024"
+                    },
+                    {
+                        "id": 13,
+                        "name": "Crown 2023"
+                    },
+                    {
+                        "id": 14,
+                        "name": "Urban Cruiser 2024"
+                    },
+                    {
+                        "id": 15,
+                        "name": "Hiace Van 2023"
+                    },
+                    {
+                        "id": 16,
+                        "name": "Prado 2023"
+                    },
+                    {
+                        "id": 17,
+                        "name": "RAIZE 2024"
+                    },
+                    {
+                        "id": 18,
+                        "name": "Highlander 2023"
+                    },
+                    {
+                        "id": 19,
+                        "name": "Corolla CROSS 2024"
+                    },
+                    {
+                        "id": 20,
+                        "name": "Rush 2023"
+                    }
                 ]
             },
             {
@@ -63,17 +131,33 @@ export default defineComponent({
                 name: 'لكزس',
                 models: [
                     {
-                        id: 111,
-                        name: 'ES'
+                        "id": 1,
+                        "name": "LC500 2023"
                     },
                     {
-                        id: 112,
-                        name: 'LS'
+                        "id": 2,
+                        "name": "IS 2023"
                     },
                     {
-                        id: 113,
-                        name: 'RX'
+                        "id": 3,
+                        "name": "LS 2023"
                     },
+                    {
+                        "id": 4,
+                        "name": "NX 2024"
+                    },
+                    {
+                        "id": 5,
+                        "name": "GX 2023"
+                    },
+                    {
+                        "id": 6,
+                        "name": "UX 2023"
+                    },
+                    {
+                        "id": 7,
+                        "name": "ES 2023"
+                    }
                 ]
             },
         ]);
@@ -232,7 +316,7 @@ export default defineComponent({
                                         <div class="form-field">
                                             <div class="frm_gp">
 
-                                            <select v-model="inputServiceType"
+                                                <select v-model="inputServiceType"
                                                     class="form-control js-select marka0 ff select2-hidden-accessible"
                                                     name="marka0" required="" data-placeholder=" "
                                                     data-select2-id="select2-data-1-iku0" tabindex="-1"
@@ -240,14 +324,14 @@ export default defineComponent({
 
                                                     <option value="0"> نوع الخدمة </option>
                                                     <option v-for="service in serviceTypes" :value="service.id">{{
-                                                    service.name }}</option>
+        service.name }}</option>
                                                 </select>
-                                            </div>  
+                                            </div>
                                             <label>
                                                 <span class="err-msg" style="display: none;">
                                                     <span>هذا الحقل مطلوب</span>
                                                 </span>
-                                                
+
                                             </label>
                                         </div>
 
@@ -283,7 +367,7 @@ export default defineComponent({
 
                                     <div class="form-group">
 
-                                        <h3 class="title_grp">4.  نوع المركبة</h3>
+                                        <h3 class="title_grp">4. نوع المركبة</h3>
 
 
 
@@ -300,7 +384,7 @@ export default defineComponent({
 
 
                                                     <option v-for="category in carCategories" :value="category.id">{{
-                                                    category.name }}</option>
+        category.name }}</option>
 
                                                 </select>
                                             </div>

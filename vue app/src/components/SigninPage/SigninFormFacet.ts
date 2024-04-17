@@ -22,9 +22,9 @@ export default class SigninForm {
 				errorMessage.value = (await resp.json()).msg;
 				failedToLogIn.value = true;
 			} else {
-				
+				const redirect = new URL(document.URL).searchParams.get('redirect') || '/';
 				console.log('logged in');
-				router.push('/requestsReport');
+				router.push(redirect);
 				User.isLoggedIn = true;
 				return true;			
 			}

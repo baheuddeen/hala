@@ -39,21 +39,21 @@ export default defineComponent({
 
 
 <template>
-    <div style="direction: ltr;">        
+    <div style="direction: ltr; margin: 25px;">        
         <DataTable :value="requests" ref="dt" sortField="price" :sortOrder="-1" tableStyle="min-width: 50rem">
             <template #header>
                 <div style="text-align: left">
                     <button @click="exportCSV($event)" style="padding: 10px; margin: 10px;"> Export CSV</button>
                 </div>
             </template>
-            <Column field="id" header="Id" sortable style="width: 5%"></Column>
-            <Column field="ip" header="IP" sortable style="width: 15%"></Column>
-            <Column field="user_name" header="Full Name" sortable style="width: 15%"></Column>
-            <Column field="phone" header="Phone" sortable style="width: 15%"></Column>
-            <Column field="service_type" header="Service Type" sortable style="width: 15%"></Column>
-            <Column field="car_type" header="Car Type" sortable style="width: 15%"></Column>
-            <Column field="car_model" header="Car Model" sortable style="width: 15%"></Column>
-            <Column field="created_at" header="Time" sortable style="width: 15%"></Column>
+            <Column field="id" header="Id"  style="width: 5%"></Column>
+            <Column field="ip" header="IP"  style="width: 15%"></Column>
+            <Column field="user_name" header="Full Name"  style="width: 15%"></Column>
+            <Column field="phone" header="Phone"  style="width: 15%"></Column>
+            <Column field="service_type" header="Service Type"  style="width: 15%"></Column>
+            <Column field="car_type" header="Car Type"  style="width: 15%"></Column>
+            <Column field="car_model" header="Car Model"  style="width: 15%"></Column>
+            <Column field="created_at" header="Time"  style="width: 15%"></Column>
         </DataTable>
     </div> 
 </template>
