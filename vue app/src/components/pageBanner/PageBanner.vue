@@ -10,3 +10,9 @@
         </div>
     </div>
 </template>
+
+<style>
+.banner_page_inner {
+    background-image: url('/assets/bg-banner-inner.jpg') !important;
+}
+</style>
