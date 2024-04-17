@@ -40,7 +40,7 @@ export default defineComponent({
       </span>
 </template>
 
-<style>
+<style scoped>
 label {
   margin: 10px;
   padding: 10px;

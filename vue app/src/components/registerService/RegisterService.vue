@@ -11,7 +11,7 @@ export default defineComponent({
         const carModelSelector = ref(null);
         const showModelSelector = ref(false);
         const inputName = ref('');
-        const inputEmail = ref('');
+        const inputServiceType = ref('0');
         const inputMobile = ref('');
         const inputCarType = ref('0');
         const inputCarModel = ref('0');
@@ -29,6 +29,16 @@ export default defineComponent({
                 showModelSelector.value = true;
             });
         });
+        const serviceTypes = ref([
+            {
+                id: 1,
+                name: 'صيانة',
+            },
+            {
+                id: 2,
+                name: 'مبيعات',
+            },
+        ])
         const carCategories = ref([
             {
                 id: 10,
@@ -71,13 +81,6 @@ export default defineComponent({
         const onSubmit = (e) => {
             e.preventDefault();
             let valid = true;
-            console.log(inputName.value);
-            console.log(inputEmail.value);
-            console.log(inputMobile.value);
-            console.log(inputCarType.value);
-            console.log(inputCarModel.value);
-            console.log('car type name:', carCategories.value.find(item => item.id == inputCarType.value).name);
-            console.log('carModelNAme: ', carCategories.value.find(item => item.id == inputCarType.value).models.find(item => item.id == inputCarModel.value).name);
             const validateEmail = (email) => {
                 return email.match(
                     /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -137,7 +140,7 @@ export default defineComponent({
             myHeaders.append("Content-Type", "application/json");
             const raw = JSON.stringify({
                 user_name: inputName.value,
-                email: inputEmail.value,
+                service_type: serviceTypes.value.find(item => item.id == inputServiceType.value).name,
                 phone: inputMobile.value,
                 car_type: carCategories.value.find(item => item.id == inputCarType.value).name,
                 car_model: carCategories.value.find(item => item.id == inputCarType.value).models.find(item => item.id == inputCarModel.value).name,
@@ -164,11 +167,12 @@ export default defineComponent({
             carModelSelector,
             showModelSelector,
             inputName,
-            inputEmail,
+            inputServiceType,
             inputMobile,
             inputCarType,
             inputCarModel,
             formSubmited,
+            serviceTypes,
             onSubmit,
         }
     }
@@ -203,7 +207,7 @@ export default defineComponent({
 
                                     <div class="form-group">
 
-                                        <h3 class="title_grp">1. ما هو اسمك بالكامل</h3>
+                                        <h3 class="title_grp">1. الاسم</h3>
                                         <div class="form-field">
                                             <div class="frm_gp">
 
@@ -222,21 +226,28 @@ export default defineComponent({
 
                                     <div class="form-group">
 
-                                        <h3 class="title_grp">2. ما هو بريدك الالكتروني</h3>
+                                        <h3 class="title_grp">2. نوع الخدمة</h3>
 
 
                                         <div class="form-field">
                                             <div class="frm_gp">
-                                                <input type="email" v-model="inputEmail" class="form-control ff"
-                                                    name="email" placeholder="البريد الاليكتروني">
-                                            </div>
+
+                                            <select v-model="inputServiceType"
+                                                    class="form-control js-select marka0 ff select2-hidden-accessible"
+                                                    name="marka0" required="" data-placeholder=" "
+                                                    data-select2-id="select2-data-1-iku0" tabindex="-1"
+                                                    aria-hidden="true">
+
+                                                    <option value="0"> نوع الخدمة </option>
+                                                    <option v-for="service in serviceTypes" :value="service.id">{{
+                                                    service.name }}</option>
+                                                </select>
+                                            </div>  
                                             <label>
                                                 <span class="err-msg" style="display: none;">
                                                     <span>هذا الحقل مطلوب</span>
                                                 </span>
-                                                <span class="err-msg-valid-email" style="display: none;">
-                                                    <span>ادخل بريد الكتروني صحيح</span>
-                                                </span>
+                                                
                                             </label>
                                         </div>
 
@@ -244,7 +255,7 @@ export default defineComponent({
 
                                     <div class="form-group">
 
-                                        <h3 class="title_grp">3. ما هو رقم جوالك </h3>
+                                        <h3 class="title_grp">3. رقم الجوال </h3>
 
                                         <div class="form-field">
 
@@ -272,7 +283,7 @@ export default defineComponent({
 
                                     <div class="form-group">
 
-                                        <h3 class="title_grp">4. ماهو نوع المركبة</h3>
+                                        <h3 class="title_grp">4.  نوع المركبة</h3>
 
 
 

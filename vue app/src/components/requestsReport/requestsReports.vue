@@ -50,7 +50,7 @@ export default defineComponent({
             <Column field="ip" header="IP" sortable style="width: 15%"></Column>
             <Column field="user_name" header="Full Name" sortable style="width: 15%"></Column>
             <Column field="phone" header="Phone" sortable style="width: 15%"></Column>
-            <Column field="email" header="Email Address" sortable style="width: 15%"></Column>
+            <Column field="service_type" header="Service Type" sortable style="width: 15%"></Column>
             <Column field="car_type" header="Car Type" sortable style="width: 15%"></Column>
             <Column field="car_model" header="Car Model" sortable style="width: 15%"></Column>
             <Column field="created_at" header="Time" sortable style="width: 15%"></Column>

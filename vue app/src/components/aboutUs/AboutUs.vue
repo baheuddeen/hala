@@ -5,12 +5,7 @@
                 <div class="col-md-6">
                     <div class="about_pic">
                         <img decoding="async" src="https://halaauto.com/wp-content/uploads/2022/08/about-pic-1.png" alt="شركة هلا السعودية" data-aos="fade-left" data-aos-delay="100" class="aos-init aos-animate">
-                        <div data-aos="fade-left" data-aos-delay="250" class="aos-init aos-animate">
-                            <a href="https://halaauto.com/wp-content/uploads/2022/09/trailer.mp4" data-fancybox="" class="vedio_btn">
-                                <div class="icon_play"></div>
-                                <div class="vedio_txt">ابدا بمتابعة الفيديو<span>طريقة عمل هلا اوتــــــــــــو</span></div>
-                            </a>
-                        </div>
+                        
                     </div>
                 </div>
                 <div class="col-md-6">

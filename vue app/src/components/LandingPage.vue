@@ -46,12 +46,10 @@ export default defineComponent({
 
 <template>
     <div class='main-wrapper'>
-        <HalaHeader />
         <PageBanner />
         <Slider />
         <RegisterService />
         <AboutUs />
         <Whatsapp />
-        <HalaFooter />
     </div>
 </template>
