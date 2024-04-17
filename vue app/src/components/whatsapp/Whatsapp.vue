@@ -5,7 +5,7 @@ export default defineComponent({
     name: 'Whatsapp',
     setup() {
         return {
-            whatsappNumber: '+20123456789',
+            whatsappNumber: '+966502524931',
         }
     }
 });
