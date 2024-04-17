@@ -8,7 +8,7 @@ const user = new InitSource();
 
 const create = async (req: Request, res: Response) => {
   const newInitSource = req.body as InitSourceType;
-  newInitSource.ip = req.ip;
+  newInitSource.ip = req.headers['x-forwarded-for'].toString() || req.connection.remoteAddress;
   
   console.log('new', newInitSource);
   
