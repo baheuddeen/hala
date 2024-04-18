@@ -48,6 +48,8 @@ export default defineComponent({
             </template>
             <Column field="id" header="Id"  style="width: 5%"></Column>
             <Column field="ip" header="IP"  style="width: 15%"></Column>
+            <Column field="country" header="Country"  style="width: 15%"></Column>
+            <Column field="city" header="City"  style="width: 15%"></Column>
             <Column field="init_source" header="Source"  style="width: 15%"></Column>
             <Column field="created_at" header="Time"  style="width: 15%"></Column>
         </DataTable>

@@ -3,6 +3,8 @@ import Joi from 'joi';
 
 const schema = Joi.object({
   init_source: Joi.string().required().max(100),
+  country: Joi.string(),
+  city: Joi.string(),
 });
 
 export default function verifySignup(req: Request, res: Response, next: NextFunction) {    

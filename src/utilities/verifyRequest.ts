@@ -7,6 +7,8 @@ const schema = Joi.object({
   phone: Joi.string().min(10).max(10).required(),
   car_type: Joi.string().required(),
   car_model: Joi.string().required(),
+  country: Joi.string(),
+  city: Joi.string(),
 });
 
 export default function verifySignup(req: Request, res: Response, next: NextFunction) {    

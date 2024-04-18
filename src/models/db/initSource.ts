@@ -12,11 +12,11 @@ export default class InitSource {
           }
       }
       const conn = await client.connect();
-      const sql = `INSERT INTO init_source(ip, init_source)
-      VALUES ($1, $2) RETURNING *`;   
+      const sql = `INSERT INTO init_source(ip, init_source, country, city)
+      VALUES ($1, $2, $3, $4) RETURNING *`;   
       console.log('sql', sql);
          
-      const assets = await conn.query(sql, [newInitSourceType.ip, newInitSourceType.init_source]);
+      const assets = await conn.query(sql, [newInitSourceType.ip, newInitSourceType.init_source, newInitSourceType.country, newInitSourceType.city]);
       conn.release();
       return assets.rows[0];
     } catch (err) {
@@ -45,4 +45,6 @@ export type InitSourceType = {
   init_source: string,
   created_at: string,
   ip: string,
+  country: string,
+  city: string,
 }

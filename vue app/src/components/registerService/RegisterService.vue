@@ -162,7 +162,7 @@ export default defineComponent({
             },
         ]);
 
-        const onSubmit = (e) => {
+        const onSubmit = async (e) => {
             e.preventDefault();
             let valid = true;
             const validateEmail = (email) => {
@@ -222,12 +222,25 @@ export default defineComponent({
 
             const myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
+
+            let country = "not-set";
+            let city = "not-set";
+            try { 
+                const geoInf = await (await fetch("https://api.geoapify.com/v1/ipinfo?&apiKey=8243e8158a9d45328449573dc66d8088", requestOptions)).json();
+                country = geoInf?.country?.name || 'null';
+                city = geoInf?.city?.name || 'null';
+            } catch(e) {
+                console.log(e);
+            }
+
             const raw = JSON.stringify({
                 user_name: inputName.value,
                 service_type: serviceTypes.value.find(item => item.id == inputServiceType.value).name,
                 phone: inputMobile.value,
                 car_type: carCategories.value.find(item => item.id == inputCarType.value).name,
                 car_model: carCategories.value.find(item => item.id == inputCarType.value).models.find(item => item.id == inputCarModel.value).name,
+                country,
+                city,
             });
 
             const requestOptions = {

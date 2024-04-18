@@ -12,11 +12,11 @@ export default class ServiceRequest {
           }
       }
       const conn = await client.connect();
-      const sql = `INSERT INTO service_requests(ip, user_name, service_type, phone, car_type, car_model)
-      VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`;   
+      const sql = `INSERT INTO service_requests(ip, user_name, service_type, phone, car_type, car_model, country, city)
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *`;   
       console.log('sql', sql);
          
-      const assets = await conn.query(sql, [newServiceRequest.ip, newServiceRequest.user_name, newServiceRequest.service_type, newServiceRequest.phone, newServiceRequest.car_type, newServiceRequest.car_model]);
+      const assets = await conn.query(sql, [newServiceRequest.ip, newServiceRequest.user_name, newServiceRequest.service_type, newServiceRequest.phone, newServiceRequest.car_type, newServiceRequest.car_model, newServiceRequest.country, newServiceRequest.city]);
       conn.release();      
       return assets.rows[0];
     } catch (err) {
@@ -48,4 +48,6 @@ export type ServiceRequestType = {
   car_type: string,
   car_model: string,
   ip: string,
+  country: string,
+  city: string,
 }
