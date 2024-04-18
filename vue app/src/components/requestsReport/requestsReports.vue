@@ -48,6 +48,8 @@ export default defineComponent({
             </template>
             <Column field="id" header="Id"  style="width: 5%"></Column>
             <Column field="ip" header="IP"  style="width: 15%"></Column>
+            <Column field="country" header="Country"  style="width: 10%"></Column>
+            <Column field="city" header="City"  style="width: 10%"></Column>
             <Column field="user_name" header="Full Name"  style="width: 15%"></Column>
             <Column field="phone" header="Phone"  style="width: 15%"></Column>
             <Column field="service_type" header="Service Type"  style="width: 15%"></Column>
