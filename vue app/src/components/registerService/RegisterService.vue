@@ -223,10 +223,13 @@ export default defineComponent({
             const myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
 
+            const requestOptionsGeo = {
+                method: 'GET',
+            };
             let country = "not-set";
             let city = "not-set";
             try { 
-                const geoInf = await (await fetch("https://api.geoapify.com/v1/ipinfo?&apiKey=8243e8158a9d45328449573dc66d8088", requestOptions)).json();
+                const geoInf = await (await fetch("https://api.geoapify.com/v1/ipinfo?&apiKey=8243e8158a9d45328449573dc66d8088", requestOptionsGeo)).json();
                 country = geoInf?.country?.name || 'null';
                 city = geoInf?.city?.name || 'null';
             } catch(e) {
