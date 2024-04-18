@@ -20,7 +20,7 @@ export default defineComponent({
                     return res.json()
                 })
                 .then((resp) => {
-                    requests.value = resp.data;
+                    requests.value = resp.data.sort((a, b) => new Date(a.created_at) - new Date(b.created_at));;
                     console.log(requests.value);
                 });
         });
