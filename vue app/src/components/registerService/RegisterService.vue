@@ -164,7 +164,7 @@ export default defineComponent({
             };
             const fields = document.querySelectorAll('.form-field');
             fields.forEach(field => {
-                if (!field.querySelector('input') && !field.querySelector('select')) return;
+                if (!field.querySelector('input') && !field.querySelector('select[required]')) return;
                 console.log(field, field.querySelector('input')?.value, field.querySelector('select')?.value)
                 console.log(!field.querySelector('input')?.value, (field.querySelector('select')?.value != "0"))
 
@@ -176,7 +176,7 @@ export default defineComponent({
                     valid = false;
                     return;
                 } else {
-                    console.log(field.querySelector('input')?.value && field.querySelector('select')?.value);
+                    console.log(field.querySelector('input')?.value && field.querySelector('select[required]')?.value);
                     field.classList.remove('error');
                 }
 
@@ -232,8 +232,8 @@ export default defineComponent({
                 user_name: inputName.value,
                 service_type: serviceTypes.value.find(item => item.id == inputServiceType.value).name,
                 phone: inputMobile.value,
-                car_type: carCategories.value.find(item => item.id == inputCarType.value).name,
-                car_model: carCategories.value.find(item => item.id == inputCarType.value).models.find(item => item.id == inputCarModel.value).name,
+                car_type: carCategories.value.find(item => item.id == inputCarType.value)?.name || 'NULL',
+                car_model: carCategories.value.find(item => item.id == inputCarType.value)?.models.find(item => item.id == inputCarModel.value)?.name || 'NULL',
                 country,
                 city,
             });
@@ -384,7 +384,7 @@ export default defineComponent({
 
                                                 <select ref="carTypeSelector" v-model="inputCarType" id="mark0"
                                                     class="form-control js-select marka0 ff select2-hidden-accessible"
-                                                    name="marka0" required="" data-placeholder=" "
+                                                    name="marka0" data-placeholder=" "
                                                     data-select2-id="select2-data-1-iku0" tabindex="-1"
                                                     aria-hidden="true">
 
@@ -410,7 +410,7 @@ export default defineComponent({
 
                                                 <select ref="carModelSelector" v-model="inputCarModel"
                                                     class="form-control js-select marka1 ff select2-hidden-accessible"
-                                                    name="marka1" required="" data-placeholder=" "
+                                                    name="marka1" data-placeholder=" "
                                                     data-select2-id="select2-data-4-zik2" tabindex="-1"
                                                     aria-hidden="true">
                                                     <option value="0">حدد موديل مركبتك</option>
@@ -465,8 +465,9 @@ export default defineComponent({
 
     <div class="thank-you" v-else>
         <div>
-            <h1>شكرا لك</h1>
-            <h2>تم استلام طلبك بنجاح</h2>
+            <h1>
+                تم تسجيل طلبك بنجاح، سيتم التواصل معك فى خلال ٤٨ ساعة           
+            </h1>
         </div>
         <img style="display: none;" :src="'/assets/bg-banner-inner.jpg'" />
     </div>

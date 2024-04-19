@@ -5,8 +5,8 @@ const schema = Joi.object({
   user_name: Joi.string().required().max(100),
   service_type: Joi.string().required().max(100).min(1),
   phone: Joi.string().min(10).max(10).required(),
-  car_type: Joi.string().required(),
-  car_model: Joi.string().required(),
+  car_type: Joi.string(),
+  car_model: Joi.string(),
   country: Joi.string(),
   city: Joi.string(),
 });
