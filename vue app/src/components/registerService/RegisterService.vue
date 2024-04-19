@@ -529,3 +529,16 @@ select {
     background-image: url('https://halaauto.com/wp-content/themes/hala-auto3/images/bg-banner-inner.jpg');
 }
 </style>
+
+<style>
+.btn_prim {
+    padding: 0px !important;
+}
+.btn_prim:hover {
+    background-color: #cf3f44 !important;
+    color: aliceblue !important;
+}
+.btn_prim .send-btn {
+    font-size: x-large;
+    font-weight: 600;
+}</style>
