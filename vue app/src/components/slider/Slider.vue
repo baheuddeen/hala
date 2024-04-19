@@ -13,16 +13,19 @@ export default defineComponent({
                 id: '1',
                 name: 'Car one',
                 image: '/assets/slider_1.jpg',
+                imageMobile: '/assets/slider_1_mob.jpg'
             },
             {
                 id: '2',
                 name: 'Car two',
                 image: '/assets/slider_2.jpg',
+                imageMobile: '/assets/slider_2_mob.jpg'
             },
             {
                 id: '3',
                 name: 'Car three',
                 image: '/assets/slider_3.jpg',
+                imageMobile: '/assets/slider_3_mob.jpg'
             },
         ]);
 
@@ -41,8 +44,8 @@ export default defineComponent({
                     <div class="col-12">
                         <div>
                             <picture>
-                                <source type="image/webp" :srcset="slotProps.data.imageMobile" media="(min-width: 100px)">
-                                <source type="image/webp" :srcset="slotProps.data.image" media="(min-width: 800px)">
+                                <source type="image/webp" :srcset="slotProps.data.imageMobile" media="(max-width: 780px)">
+                                <source type="image/webp" :srcset="slotProps.data.image" media="(min-width: 780px)">
                                 <img width="100%" :src="slotProps.data.image" :alt="slotProps.data.name">
                             </picture>
                         </div>

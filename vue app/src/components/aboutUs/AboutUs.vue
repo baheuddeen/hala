@@ -36,4 +36,14 @@
                 </div>
             </div>
         </div>
-    </div></template>
+    </div>
+    </template>
+
+<style>
+@media screen and (max-width: 768px) {
+    .section_about {
+        padding-top: 0px !important;
+    }    
+}
+
+</style>

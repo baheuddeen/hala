@@ -542,4 +542,15 @@ select {
 .btn_prim .send-btn {
     font-size: x-large;
     font-weight: 600;
-}</style>
+}
+
+@media screen and (max-width: 768px) {
+    .btn_prim .send-btn {
+        font-size: large;
+        font-weight: 600;
+    }
+    .content_bk_form .form_sty .btn_prim {
+        margin: auto !important;
+    }
+}
+</style>
