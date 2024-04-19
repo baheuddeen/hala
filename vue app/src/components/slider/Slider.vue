@@ -35,9 +35,9 @@ export default defineComponent({
 
 <template>
     <section class="slider-primevue">
-        <Carousel :value="cars" :numVisible="1" :numScroll="1" :autoplayInterval="3000">
+        <Carousel :value="cars" :numVisible="1" :numScroll="1" :autoplayInterval="5000" :nextButtonProps="{hidden: true}" :prevButtonProps="{hidden: true}" >
             <template #item="slotProps">
-                <div class="row border-1 surface-border border-round m-2  p-3">
+                <div class="row  surface-border border-round">
                     <div class="col-12">
                         <div class="relative mx-auto">
                             <picture>
