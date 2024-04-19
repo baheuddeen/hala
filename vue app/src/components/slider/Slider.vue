@@ -40,7 +40,11 @@ export default defineComponent({
                 <div class="row border-1 surface-border border-round m-2  p-3">
                     <div class="col-12">
                         <div class="relative mx-auto">
-                            <img :src="slotProps.data.image" :alt="slotProps.data.name" class="w-full border-round" />
+                            <picture>
+                                <source type="image/webp" :srcset="slotProps.data.imageMobile" media="(min-width: 100px)">
+                                <source type="image/webp" :srcset="slotProps.data.image" media="(min-width: 800px)">
+                                <img width="100%" :src="slotProps.data.image" :alt="slotProps.data.name">
+                            </picture>
                         </div>
                     </div>
                 </div>
@@ -52,5 +56,16 @@ export default defineComponent({
 <style scoped>
     .slider-primevue {
         direction: ltr;
+        margin-top: 50px;
+    }
+
+    .slider-primevue img {
+        height: 500px;
+    }
+
+    @media screen and (max-width:767px) {
+        .slider-primevue img {
+        height: 400px;
+    }
     }
 </style>
