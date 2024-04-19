@@ -11,21 +11,21 @@ export default defineComponent({
         const cars = ref([
             {
                 id: '1',
-                name: 'Car one',
-                image: '/assets/slider_1.jpg',
-                imageMobile: '/assets/slider_1_mob.jpg'
+                name: 'lexus',
+                image: '/assets/lexus.jpg',
+                imageMobile: '/assets/lexus_mob.jpg'
             },
             {
                 id: '2',
-                name: 'Car two',
-                image: '/assets/slider_2.jpg',
-                imageMobile: '/assets/slider_2_mob.jpg'
+                name: 'toyota',
+                image: '/assets/toyota.jpg',
+                imageMobile: '/assets/toyota_mob.jpg'
             },
             {
                 id: '3',
                 name: 'Car three',
-                image: '/assets/slider_3.jpg',
-                imageMobile: '/assets/slider_3_mob.jpg'
+                image: '/assets/mantanince.jpg',
+                imageMobile: '/assets/mantanince_mob.jpg'
             },
         ]);
 

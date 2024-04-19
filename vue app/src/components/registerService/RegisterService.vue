@@ -42,121 +42,113 @@ export default defineComponent({
         const carCategories = ref([
             {
                 id: 10,
-                name: 'تويوتا',
+                name: 'TOYOTA',
                 models: [
                     {
                         "id": 1,
-                        "name": "LiteAce VAN 2024"
+                        "name": "Yaris"
                     },
                     {
                         "id": 2,
-                        "name": "Land Cruiser 2024"
+                        "name": "Corolla"
                     },
                     {
                         "id": 3,
-                        "name": "Land Cruiser 70 Hardtop 2024"
+                        "name": "Camry"
                     },
                     {
                         "id": 4,
-                        "name": "RAV4 2024"
+                        "name": "Crown"
                     },
                     {
                         "id": 5,
-                        "name": "Land Cruiser 70 Pickup 2024"
+                        "name": "Rav4"
                     },
                     {
                         "id": 6,
-                        "name": "Yaris 2024"
+                        "name": "Urban"
                     },
                     {
                         "id": 7,
-                        "name": "Veloz 2024"
+                        "name": "Veloz"
                     },
                     {
                         "id": 8,
-                        "name": "Hilux Double Cab 2024"
+                        "name": "Fortuner"
                     },
                     {
                         "id": 9,
-                        "name": "Fortuner 2024"
+                        "name": "Raize"
                     },
                     {
                         "id": 10,
-                        "name": "Camry 2024"
+                        "name": "Innova"
                     },
                     {
                         "id": 11,
-                        "name": "Corolla 2024"
+                        "name": "Prado"
                     },
                     {
                         "id": 12,
-                        "name": "Innova 2024"
+                        "name": "Land Cruiser"
                     },
                     {
                         "id": 13,
-                        "name": "Crown 2023"
+                        "name": "Land cruiser 70 Hardtop"
                     },
                     {
                         "id": 14,
-                        "name": "Urban Cruiser 2024"
+                        "name": "Hilux"
                     },
                     {
                         "id": 15,
-                        "name": "Hiace Van 2023"
+                        "name": "Land cruiser 70 Double Cabin"
                     },
                     {
                         "id": 16,
-                        "name": "Prado 2023"
+                        "name": "LITEACE"
                     },
                     {
                         "id": 17,
-                        "name": "RAIZE 2024"
-                    },
-                    {
-                        "id": 18,
-                        "name": "Highlander 2023"
-                    },
-                    {
-                        "id": 19,
-                        "name": "Corolla CROSS 2024"
-                    },
-                    {
-                        "id": 20,
-                        "name": "Rush 2023"
+                        "name": "HIACE"
                     }
                 ]
             },
             {
                 id: 11,
-                name: 'لكزس',
+                name: 'LEXUS',
                 models: [
                     {
                         "id": 1,
-                        "name": "LC500 2023"
+                        "name": "IS"
                     },
                     {
                         "id": 2,
-                        "name": "IS 2023"
+                        "name": "ES"
                     },
                     {
                         "id": 3,
-                        "name": "LS 2023"
+                        "name": "LS"
                     },
                     {
                         "id": 4,
-                        "name": "NX 2024"
+                        "name": "UX"
                     },
                     {
                         "id": 5,
-                        "name": "GX 2023"
+                        "name": "NX"
                     },
                     {
                         "id": 6,
-                        "name": "UX 2023"
+                        "name": "RX"
                     },
                     {
                         "id": 7,
-                        "name": "ES 2023"
+                        "name": "GX"
+                    },
+                    {
+                        "id": 8,
+                        "name": "LX"
                     }
                 ]
             },
@@ -228,11 +220,11 @@ export default defineComponent({
             };
             let country = "not-set";
             let city = "not-set";
-            try { 
+            try {
                 const geoInf = await (await fetch("https://api.geoapify.com/v1/ipinfo?&apiKey=8243e8158a9d45328449573dc66d8088", requestOptionsGeo)).json();
                 country = geoInf?.country?.name || 'null';
                 city = geoInf?.city?.name || 'null';
-            } catch(e) {
+            } catch (e) {
                 console.log(e);
             }
 
@@ -535,10 +527,12 @@ select {
 .btn_prim {
     padding: 0px !important;
 }
+
 .btn_prim:hover {
     background-color: #cf3f44 !important;
     color: aliceblue !important;
 }
+
 .btn_prim .send-btn {
     font-size: x-large;
     font-weight: 600;
@@ -549,6 +543,7 @@ select {
         font-size: large;
         font-weight: 600;
     }
+
     .content_bk_form .form_sty .btn_prim {
         margin: auto !important;
     }
