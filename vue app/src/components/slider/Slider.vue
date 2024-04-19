@@ -37,9 +37,9 @@ export default defineComponent({
     <section class="slider-primevue">
         <Carousel :value="cars" :numVisible="1" :numScroll="1" :autoplayInterval="5000" :nextButtonProps="{hidden: true}" :prevButtonProps="{hidden: true}" >
             <template #item="slotProps">
-                <div class="row  surface-border border-round">
+                <div class="row">
                     <div class="col-12">
-                        <div class="relative mx-auto">
+                        <div>
                             <picture>
                                 <source type="image/webp" :srcset="slotProps.data.imageMobile" media="(min-width: 100px)">
                                 <source type="image/webp" :srcset="slotProps.data.image" media="(min-width: 800px)">
@@ -56,7 +56,7 @@ export default defineComponent({
 <style scoped>
     .slider-primevue {
         direction: ltr;
-        margin-top: 50px;
+        margin-top: 45px;
     }
 
     .slider-primevue img {
