@@ -476,6 +476,7 @@ export default defineComponent({
             <h1>شكرا لك</h1>
             <h2>تم استلام طلبك بنجاح</h2>
         </div>
+        <img style="display: none;" :src="'/assets/bg-banner-inner.jpg'" />
     </div>
 </template>
 
@@ -526,7 +527,7 @@ select {
     margin-top: 50px;
     padding: 100px;
     color: white;
-    background-image: url('https://halaauto.com/wp-content/themes/hala-auto3/images/bg-banner-inner.jpg');
+    background-image: url('/assets/bg-banner-inner.jpg');
 }
 </style>
 
